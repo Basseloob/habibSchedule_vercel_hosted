@@ -1,38 +1,189 @@
-.App {
-  text-align: center;
+.body {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* //////////////////////////////////////////////     HEADER */
+header {
+  /* position: relative; */
+  /* position: fixed; */
+  top: 0;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: row; */
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+  width: 100%;
+  height: 60px;
+  background-color: #04aa6d;
+}
+
+.links {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.dropbtn {
+  background-color: #89aa04;
+  color: rgb(7, 7, 7);
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+/* //////////////////////////////////////////////     APP */
+
+.column {
+  flex: 1;
+  text-align: center;
+  margin: auto;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: flex-start; */
+}
+
+img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+h4 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* text-align: center; */
+  /* padding: 10px; */
+  /* border-bottom: 2px solid rgba(0, 0, 0, 0.2); */
+}
+
+.dropbtn2 {
+  /* background-color: #89aa04; */
+  color: rgb(7, 7, 7);
+  padding: 16px;
+  font-size: 16px;
+  /* border: none; */
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropbtn2 {
+  background-color: #3e8e41;
+}
+li {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  margin-right: 5px;
+}
+
+/* //////////////////////////////////////////////     FOOTER */
+footer {
+  width: 100%;
+  height: 100%;
+  background-color: #04aa6d;
+  position: sticky;
+  bottom: 0;
+}
+
+/* .navbar {
+  width: 100%;
+  height: 70px;
+  background-color: dodgerblue;
+  display: flex;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+.navbar .loggedInContainer {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.navbar a {
+  margin-left: 20px;
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar button {
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  margin-right: 10px;
+  background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar h1 {
+  text-align: right;
+  margin-right: 10px;
+  color: white;
+  font-weight: lighter;
 }
+
+/* //////////////////////////////////////////////////////////////// //////////////  Drop Down Menu*/

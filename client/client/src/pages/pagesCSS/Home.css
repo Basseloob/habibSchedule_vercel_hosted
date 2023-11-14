@@ -1,0 +1,16 @@
+.data {
+  width: 400px;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  border: 1px solid lightgray;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.data .body {
+  flex: 60%;
+  display: grid;
+  place-content: center;
+}
