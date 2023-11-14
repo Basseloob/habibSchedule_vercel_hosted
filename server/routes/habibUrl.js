@@ -6,10 +6,10 @@ const router = express.Router();
 const sanitize = require("sanitize-filename");
 // const { URL } = require("url");
 
-const { Habib } = require("../models");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const { validateToken } = require("../middlewares/authMiddleWare");
+// const { Habib } = require("../models");
+// const bcrypt = require("bcrypt");
+// const jwt = require("jsonwebtoken");
+// const { validateToken } = require("../middlewares/authMiddleWare");
 
 // puppeteer
 const { get_Habib_Data } = require("../middlewares/habibPuppeteer_Ware");
