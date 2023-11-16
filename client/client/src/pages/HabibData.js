@@ -66,7 +66,9 @@ const HabibData = () => {
     setChooseClinic(innerText);
 
     axios
-      .get("http://localhost:3001/habibUrl/habibSchedule_Nephrology")
+      .get(
+        "https://habib-schedule-vercel-hosted.vercel.app/habibUrl/habibSchedule_Nephrology"
+      )
       .then((response) => {
         // console.log(response.data);
         setAllDoctors(response.data);
