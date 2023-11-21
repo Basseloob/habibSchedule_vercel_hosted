@@ -113,7 +113,7 @@ const HabibData = () => {
 
         {/* List Of Doctors */}
 
-        <div className="column2" style={{ marginLeft: "6rem" }}>
+        <div className="column2" style={{ marginLeft: "6rem", width: "100vh" }}>
           {allDoctors.map((doctor, key) => {
             return (
               <div className="doctorData" key={key}>
