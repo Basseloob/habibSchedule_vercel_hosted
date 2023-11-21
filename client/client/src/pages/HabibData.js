@@ -13,7 +13,10 @@ const HabibData = () => {
     setChooseClinic(innerText);
 
     axios
-      .get("http://localhost:3001/habibUrl/habibSchedule_FM")
+      .get(
+        // "https://habib-schedule-vercel-hosted.vercel.app/habibUrl/habibSchedule_FM"
+        "http://localhost:3001/habibUrl/habibSchedule_FM"
+      )
       .then((response) => {
         console.log(response.data);
         setAllDoctors(response.data);
@@ -83,9 +86,9 @@ const HabibData = () => {
         alignItems: "center",
       }}
     >
-      <div style={{ maxWidth: "310px" }} className="habibPageContainer">
+      <div className="habibPageContainer">
         {/* <div className="basicInfo"></div> */}
-        <div className="column">
+        <div className="column1">
           <div className="dropdown">
             <button className="dropbtn2">{chooseClinic}</button>
             <div className="dropdown-content">
@@ -110,40 +113,173 @@ const HabibData = () => {
 
         {/* List Of Doctors */}
 
-        <div className="column">
+        <div className="column2" style={{ marginLeft: "6rem" }}>
           {allDoctors.map((doctor, key) => {
             return (
-              <div key={key}>
-                <img src={`${doctor.Img}`}></img>
-                <h4>
-                  {key + 1}- {doctor.Name}
-                </h4>
-                {/* <h5>{doctor.Speciality}</h5> */}
-                <h4>Date: {doctor.Date}</h4>
-                {/* <p>Times:{doctor.Times[0]}</p> */}
-                <h4>
-                  Times :
-                  {doctor.Times.map((time, id) => (
-                    <p
+              <div className="doctorData" key={key}>
+                <div
+                  className="img&name"
+                  style={{ maxWidth: "150px", marginRight: "3rem" }}
+                >
+                  <img src={`${doctor.Img}`}></img>
+                  <h4>
+                    {key + 1}- {doctor.Name}
+                  </h4>
+                </div>
+
+                <div
+                  className="date_times"
+                  style={{
+                    width: "700px",
+                    overflowX: "visible",
+                    whiteSpace: "nowrap",
+                    // marginLeft: "5rem",
+                  }}
+                >
+                  <div className="element" style={{ maxWidth: "30px" }}>
+                    <h4 style={{ marginBottom: "0.5rem" }}>
+                      Date: {doctor.Date}
+                    </h4>
+                    <h4
                       style={{
-                        // fontWeight: "lighter",
-                        display: "inline-block",
-                        marginRight: "10px",
-                        color: "blue",
+                        display: "grid",
+                        gridTemplateColumns: "repeat(4, 1fr)",
+                        gap: "5px",
+                        // gridAutoRows: "minmax(100px, auto)",
                       }}
-                      key={id}
                     >
-                      {time}
-                    </p>
-                  ))}
-                </h4>
+                      {/* Times : */}
+                      {doctor.Times.map((time, id) => (
+                        <p
+                          style={{
+                            // // display: "flex",
+                            // marginRight: "10px",
+                            // color: "blue",
+                            // // width: "45px",
+                            flex: " 0 0 45px" /* Set the width of each item */,
+                            marginRight: "10px",
+                            color: "blue",
+                          }}
+                          key={id}
+                        >
+                          {time}
+                        </p>
+                      ))}
+                    </h4>
+                  </div>
+
+                  <div
+                    className="element"
+                    style={{ maxWidth: "30px", marginLeft: "15rem" }}
+                  >
+                    <h4 style={{ marginBottom: "0.5rem" }}>
+                      Date: {doctor.Date}
+                    </h4>
+                    <h4
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "repeat(4, 1fr)",
+                        gap: "5px",
+                        // gridAutoRows: "minmax(100px, auto)",
+                      }}
+                    >
+                      {/* Times : */}
+                      {doctor.Times.map((time, id) => (
+                        <p
+                          style={{
+                            // // display: "flex",
+                            // marginRight: "10px",
+                            // color: "blue",
+                            // // width: "45px",
+                            flex: " 0 0 45px" /* Set the width of each item */,
+                            marginRight: "10px",
+                            color: "blue",
+                          }}
+                          key={id}
+                        >
+                          {time}
+                        </p>
+                      ))}
+                    </h4>
+                  </div>
+
+                  <div
+                    className="element"
+                    style={{ maxWidth: "30px", marginLeft: "15rem" }}
+                  >
+                    <h4 style={{ marginBottom: "0.5rem" }}>
+                      Date: {doctor.Date}
+                    </h4>
+                    <h4
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "repeat(4, 1fr)",
+                        gap: "5px",
+                        // gridAutoRows: "minmax(100px, auto)",
+                      }}
+                    >
+                      {/* Times : */}
+                      {doctor.Times.map((time, id) => (
+                        <p
+                          style={{
+                            // // display: "flex",
+                            // marginRight: "10px",
+                            // color: "blue",
+                            // // width: "45px",
+                            flex: " 0 0 45px" /* Set the width of each item */,
+                            marginRight: "10px",
+                            color: "blue",
+                          }}
+                          key={id}
+                        >
+                          {time}
+                        </p>
+                      ))}
+                    </h4>
+                  </div>
+
+                  <div
+                    className="element"
+                    style={{ maxWidth: "30px", marginLeft: "15rem" }}
+                  >
+                    <h4 style={{ marginBottom: "0.5rem" }}>
+                      Date: {doctor.Date}
+                    </h4>
+                    <h4
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "repeat(4, 1fr)",
+                        gap: "5px",
+                        // gridAutoRows: "minmax(100px, auto)",
+                      }}
+                    >
+                      {/* Times : */}
+                      {doctor.Times.map((time, id) => (
+                        <p
+                          style={{
+                            // // display: "flex",
+                            // marginRight: "10px",
+                            // color: "blue",
+                            // // width: "45px",
+                            flex: " 0 0 45px" /* Set the width of each item */,
+                            marginRight: "10px",
+                            color: "blue",
+                          }}
+                          key={id}
+                        >
+                          {time}
+                        </p>
+                      ))}
+                    </h4>
+                  </div>
+                </div>
               </div>
             );
           })}
         </div>
-
-        <div className="listOfAppointments"></div>
       </div>
+
+      <div className="listOfAppointments"></div>
     </div>
   );
 };

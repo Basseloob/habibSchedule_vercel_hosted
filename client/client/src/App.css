@@ -67,7 +67,15 @@ header {
 
 /* //////////////////////////////////////////////     APP */
 
-.column {
+.habibPageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  /* min-height: 100vh; */
+}
+
+.column1 {
   flex: 1;
   text-align: center;
   margin: auto;
@@ -77,20 +85,32 @@ header {
   /* align-items: flex-start; */
 }
 
+.doctorData {
+  display: flex;
+  margin-top: 2rem;
+}
+
 img {
-  width: 60px;
-  height: 60px;
+  width: 66px;
+  height: 45px;
   border-radius: 50%;
   overflow: hidden;
+}
+
+.date_times {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: flex-start;
+  /* min-height: 100vh; */
+  overflow: scroll;
+  overflow-x: auto; /* Add this line to enable horizontal scrolling */
 }
 
 h4 {
   list-style: none;
   padding: 0;
   margin: 0;
-  /* text-align: center; */
-  /* padding: 10px; */
-  /* border-bottom: 2px solid rgba(0, 0, 0, 0.2); */
 }
 
 .dropbtn2 {
