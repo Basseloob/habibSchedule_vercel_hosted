@@ -117,10 +117,7 @@ const HabibData = () => {
           {allDoctors.map((doctor, key) => {
             return (
               <div className="doctorData" key={key}>
-                <div
-                  className="img&name"
-                  style={{ maxWidth: "150px", marginRight: "3rem" }}
-                >
+                <div className="img&name" style={{ marginRight: "5rem" }}>
                   <img src={`${doctor.Img}`}></img>
                   <h4>
                     {key + 1}- {doctor.Name}
