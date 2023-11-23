@@ -16,7 +16,7 @@ const { get_Habib_Data } = require("../middlewares/habibPuppeteer_Ware");
 const { url } = require("inspector");
 const { log } = require("console");
 
-// Spciality Links : \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// Khobar : \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 const habib_Im_Url =
   "https://hmgeservices.com/login?ProjectID=60&ClinicID=1&StrDate=%27%27&lang=en";
 const habib_Family_Url =
@@ -27,6 +27,9 @@ const habib_Endo_Url =
   "https://hmgeservices.com/login?ProjectID=60&ClinicID=14&StrDate=%27%27&lang=en";
 const habib_Nephro_Url =
   'https://hmgeservices.com/login?ProjectID=60&ClinicID=30&StrDate=%27%27&lang=en"';
+
+// Ryiadh : \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// Jeddah : \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // Family Medicine : \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 router.get("/habibSchedule_FM", async (req, res) => {
@@ -49,7 +52,7 @@ router.get("/habibSchedule_FM", async (req, res) => {
 router.get("/habibSchedule_IM", async (req, res) => {
   try {
     // 1) Get the Data :
-    await get_Habib_Data(habib_Im_Url);
+    // await get_Habib_Data(habib_Im_Url);
     // 2) Sanitize the link removing / / :
     const sanitized_Clinic_Parameter_Link = sanitize(habib_Im_Url);
     // 3) Get the file Path :

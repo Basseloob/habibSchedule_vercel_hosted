@@ -263,3 +263,39 @@ const HabibData = () => {
 };
 
 export default HabibData;
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+Times:::::::::::::
+////////////////////////////////////////////////////////////////////////////////
+
+ <div className="element" style={{ maxWidth: "30px" }}>
+                    <h4
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "repeat(4, 1fr)",
+                        gap: "5px",
+                        // gridAutoRows: "minmax(100px, auto)",
+                      }}
+                    >
+                      {/* Times : */}
+                      {doctor.Date.map((time, id) => (
+                        <p
+                          style={{
+                            // // display: "flex",
+                            // marginRight: "10px",
+                            // color: "blue",
+                            // // width: "45px",
+                            flex: " 0 0 45px" /* Set the width of each item */,
+                            marginRight: "10px",
+                            color: "blue",
+                          }}
+                          key={id}
+                        >
+                          {time}
+                        </p>
+                      ))}
+                    </h4>
+                  </div>

@@ -42,22 +42,18 @@ const get_Habib_Data = async (clinic) => {
         await page.waitForSelector(".docBox span.redColorLink");
 
         console.log("Number of now: ", i);
-        // 1) click viewdetails Btn :
+        // 1)
         let viewDetails_btns2 = await page.$$(".docBox span.redColorLink");
         viewDetails_btns2[i].click();
 
         // console.log("result array  : ", result);
 
-        // 2) After click wait for needed docs :
+        // 2)
         await page.waitForSelector(".docBoxLeft img[src]");
         await page.waitForSelector(".docBoxRight h3");
         await page.waitForSelector("b.ng-tns-c12-0");
         await page.waitForSelector("p.docMainDetails span");
         await page.waitForSelector("p.docMainDetails span");
-        await page.waitForSelector(
-          ".cal-month-view .ng-star-inserted .cal-cell-row .cal-day-number"
-        );
-
         try {
           await page.waitForSelector("div.timedate", {
             timeout: 5000,
@@ -75,7 +71,6 @@ const get_Habib_Data = async (clinic) => {
 
         // if (image && name && speciality && hospitalName && date && times) {
         const imageSource = await page.evaluate((el) => el.src, image);
-
         const nameText = await page.evaluate((el) => el.innerText, name);
 
         const speciality_Text = await page.evaluate(
@@ -88,77 +83,23 @@ const get_Habib_Data = async (clinic) => {
           hospitalName
         );
 
-        // this will get the automatically clicked cal-day-number day btn.
-        // 1) Wait for all the days to load.
-        // 2) click in each day and get the date of the clicked day... for the next week.
-        // 3) push it in an array.
+        const dateText = await page.evaluate((el) => el.innerText, date);
 
-        // await page.waitForTimeout(2000);
-        await page.waitForSelector(".cal-day-number");
-
-        let days_Btns = await page.$$(".cal-day-number");
-
-        const daysDate_Arr = [];
-
-        for (let i = 28; i < 33; i++) {
-          // 1)
-          await days_Btns[i].click();
-          await page.waitForSelector("b.ng-tns-c12-0");
-          await page.waitForTimeout(2000);
-
-          // 2)
-          const dayDate = await page.$("b.ng-tns-c12-0");
-          // const dayDate_innerText = await page.evaluate(
-          //   (el) => el.innerText,
-          //   dayDate
-          // );
-          const dayDate_innerText = await page.$eval("b.ng-tns-c12-0", (el) =>
-            el.innerText.trim()
+        ////////////////////////////////////////////////////////////////////////////
+        const innerTextArr = [];
+        try {
+        } catch (err) {}
+        const times = await page.$$("div.timedate div.timepicker");
+        for (const divElement of times) {
+          const timesText = await page.evaluate(
+            (el) => el.innerText,
+            divElement
           );
-
-          // const arial_DayDate = await page.$("div.cal-cell-top[aria-label]");
-          // const arial_DayDate_innerText = await page.evaluate(
-          //   (el) => el.getAttribute("aria-label"),
-          //   arial_DayDate
-          // );
-
-          // 3)
-          const times_Array = [];
-          // await page.waitForSelector("div.timedate div.timepicker");
-          const times = await page.$$("div.timedate div.timepicker");
-          for (const divElement of times) {
-            const timesText = await page.evaluate(
-              (el) => el.innerText,
-              divElement
-            );
-            times_Array.push(timesText);
-          }
-
-          daysDate_Arr.push({ Date: dayDate_innerText, Times: times_Array });
-          // daysDate_Arr.push({ Date: arial_DayDate_innerText });
+          innerTextArr.push(timesText);
         }
-        console.log("daysDate_Arr  : ", daysDate_Arr);
+        console.log("TimesText : ", times.length);
+        console.log("TimesText Array : ", innerTextArr);
 
-        ////////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////////
-
-        // const dateText = await page.evaluate((el) => el.innerText, date);
-
-        // const times_Array = [];
-        // try {
-        // } catch (err) {}
-        // const times = await page.$$("div.timedate div.timepicker");
-        // for (const divElement of times) {
-        //   const timesText = await page.evaluate(
-        //     (el) => el.innerText,
-        //     divElement
-        //   );
-        //   times_Array.push(timesText);
-        // }
-        // console.log("TimesText : ", times.length);
-        // console.log("TimesText Array : ", times_Array);
-
-        ////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////
 
         result.push({
@@ -166,10 +107,8 @@ const get_Habib_Data = async (clinic) => {
           Name: nameText,
           Speciality: speciality_Text,
           Hospital: hospitalName_Text,
-          // Date: daysDate,
-          // Times: times_Array,
-          // Times: daysDate,
-          DateObj: daysDate_Arr,
+          Date: dateText,
+          Times: innerTextArr,
         });
 
         page.reload();
@@ -188,9 +127,7 @@ const get_Habib_Data = async (clinic) => {
         }
       }
 
-      // console.log("End Result : ", result);
-      console.log(JSON.stringify(result, null, 2));
-
+      console.log(result);
       console.log("Loop is done. The result array is : ");
       // return result;
 
@@ -211,8 +148,6 @@ const get_Habib_Data = async (clinic) => {
 module.exports = {
   get_Habib_Data,
 };
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // const get_FamilyMedicine = async () => {
 //   // Function to extract data from a page

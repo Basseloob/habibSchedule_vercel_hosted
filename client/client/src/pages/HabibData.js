@@ -70,7 +70,8 @@ const HabibData = () => {
 
     axios
       .get(
-        "https://habib-schedule-vercel-hosted.vercel.app/habibUrl/habibSchedule_Nephrology"
+        "http://localhost:3001/habibUrl/habibSchedule_Nephrology"
+        // "https://habib-schedule-vercel-hosted.vercel.app/habibUrl/habibSchedule_Nephrology"
       )
       .then((response) => {
         // console.log(response.data);
@@ -133,45 +134,14 @@ const HabibData = () => {
                     // marginLeft: "5rem",
                   }}
                 >
-                  <div className="element" style={{ maxWidth: "30px" }}>
-                    <h4 style={{ marginBottom: "0.5rem" }}>
-                      Date: {doctor.Date}
-                    </h4>
-                    <h4
-                      style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(4, 1fr)",
-                        gap: "5px",
-                        // gridAutoRows: "minmax(100px, auto)",
-                      }}
-                    >
-                      {/* Times : */}
-                      {doctor.Times.map((time, id) => (
-                        <p
-                          style={{
-                            // // display: "flex",
-                            // marginRight: "10px",
-                            // color: "blue",
-                            // // width: "45px",
-                            flex: " 0 0 45px" /* Set the width of each item */,
-                            marginRight: "10px",
-                            color: "blue",
-                          }}
-                          key={id}
-                        >
-                          {time}
-                        </p>
-                      ))}
-                    </h4>
-                  </div>
-
                   <div
                     className="element"
-                    style={{ maxWidth: "30px", marginLeft: "15rem" }}
+                    style={{
+                      maxWidth: "30px",
+                      borderBottom: "1px solid #ccc",
+                      paddingBottom: "10px",
+                    }}
                   >
-                    <h4 style={{ marginBottom: "0.5rem" }}>
-                      Date: {doctor.Date}
-                    </h4>
                     <h4
                       style={{
                         display: "grid",
@@ -181,91 +151,22 @@ const HabibData = () => {
                       }}
                     >
                       {/* Times : */}
-                      {doctor.Times.map((time, id) => (
-                        <p
-                          style={{
-                            // // display: "flex",
-                            // marginRight: "10px",
-                            // color: "blue",
-                            // // width: "45px",
-                            flex: " 0 0 45px" /* Set the width of each item */,
-                            marginRight: "10px",
-                            color: "blue",
-                          }}
-                          key={id}
-                        >
-                          {time}
-                        </p>
-                      ))}
-                    </h4>
-                  </div>
-
-                  <div
-                    className="element"
-                    style={{ maxWidth: "30px", marginLeft: "15rem" }}
-                  >
-                    <h4 style={{ marginBottom: "0.5rem" }}>
-                      Date: {doctor.Date}
-                    </h4>
-                    <h4
-                      style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(4, 1fr)",
-                        gap: "5px",
-                        // gridAutoRows: "minmax(100px, auto)",
-                      }}
-                    >
-                      {/* Times : */}
-                      {doctor.Times.map((time, id) => (
-                        <p
-                          style={{
-                            // // display: "flex",
-                            // marginRight: "10px",
-                            // color: "blue",
-                            // // width: "45px",
-                            flex: " 0 0 45px" /* Set the width of each item */,
-                            marginRight: "10px",
-                            color: "blue",
-                          }}
-                          key={id}
-                        >
-                          {time}
-                        </p>
-                      ))}
-                    </h4>
-                  </div>
-
-                  <div
-                    className="element"
-                    style={{ maxWidth: "30px", marginLeft: "15rem" }}
-                  >
-                    <h4 style={{ marginBottom: "0.5rem" }}>
-                      Date: {doctor.Date}
-                    </h4>
-                    <h4
-                      style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(4, 1fr)",
-                        gap: "5px",
-                        // gridAutoRows: "minmax(100px, auto)",
-                      }}
-                    >
-                      {/* Times : */}
-                      {doctor.Times.map((time, id) => (
-                        <p
-                          style={{
-                            // // display: "flex",
-                            // marginRight: "10px",
-                            // color: "blue",
-                            // // width: "45px",
-                            flex: " 0 0 45px" /* Set the width of each item */,
-                            marginRight: "10px",
-                            color: "blue",
-                          }}
-                          key={id}
-                        >
-                          {time}
-                        </p>
+                      {doctor.DateObj.map((time, id) => (
+                        // <div style={{ display: "block", marginRight: "20px" }}>
+                        <div style={{ width: "150px", marginRight: "20px" }}>
+                          <p>{time.Date}</p>
+                          <ul
+                            style={{
+                              color: "blue",
+                              gap: "5px",
+                            }}
+                          >
+                            {/* {time.Times} */}
+                            {time.Times.map((time, timeIndex) => (
+                              <li key={timeIndex}>{time}</li>
+                            ))}
+                          </ul>
+                        </div>
                       ))}
                     </h4>
                   </div>
