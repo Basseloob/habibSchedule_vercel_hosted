@@ -115,7 +115,7 @@ const HabibData = () => {
 
         {/* List Of Doctors */}
 
-        <div className="column2" style={{ marginLeft: "6rem", width: "100vh" }}>
+        <div className="column2" style={{ marginLeft: "6rem", width: "95vh" }}>
           {allDoctors.map((doctor, key) => {
             return (
               <div className="doctorData" key={key}>
@@ -157,8 +157,11 @@ const HabibData = () => {
                         key={id}
                         style={{
                           width: "150px",
-                          marginRight: "20px",
+                          // marginRight: "10px",
+                          marginLeft: "20rem",
                           // flexDirection: "row",
+                          // alignItems: "center",
+                          // justifyContent: "flex-end",
                         }}
                       >
                         {/* Check if the date is not a duplicate */}
