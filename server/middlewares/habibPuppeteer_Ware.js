@@ -107,7 +107,7 @@ const get_Habib_Data = async (clinic) => {
           await page.waitForTimeout(2000);
 
           // 2)
-          const dayDate = await page.$("b.ng-tns-c12-0");
+          // const dayDate = await page.$("b.ng-tns-c12-0");
           // const dayDate_innerText = await page.evaluate(
           //   (el) => el.innerText,
           //   dayDate
@@ -116,7 +116,7 @@ const get_Habib_Data = async (clinic) => {
             el.innerText.trim()
           );
 
-          // const arial_DayDate = await page.$("div.cal-cell-top[aria-label]");
+          // const arial_DayDate = await page.$eval("div.cal-cell-top[aria-label]");
           // const arial_DayDate_innerText = await page.evaluate(
           //   (el) => el.getAttribute("aria-label"),
           //   arial_DayDate

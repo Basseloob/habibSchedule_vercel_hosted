@@ -142,33 +142,55 @@ const HabibData = () => {
                       paddingBottom: "10px",
                     }}
                   >
-                    <h4
+                    {/* <h4
                       style={{
                         display: "grid",
                         gridTemplateColumns: "repeat(4, 1fr)",
                         gap: "5px",
                         // gridAutoRows: "minmax(100px, auto)",
                       }}
-                    >
-                      {/* Times : */}
-                      {doctor.DateObj.map((time, id) => (
-                        // <div style={{ display: "block", marginRight: "20px" }}>
-                        <div style={{ width: "150px", marginRight: "20px" }}>
-                          <p>{time.Date}</p>
-                          <ul
-                            style={{
-                              color: "blue",
-                              gap: "5px",
-                            }}
-                          >
-                            {/* {time.Times} */}
-                            {time.Times.map((time, timeIndex) => (
-                              <li key={timeIndex}>{time}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
-                    </h4>
+                    > */}
+                    {/* Times : */}
+                    {doctor.DateObj.map((time, id) => (
+                      <div
+                        key={id}
+                        style={{
+                          width: "150px",
+                          marginRight: "20px",
+                          // flexDirection: "row",
+                        }}
+                      >
+                        {/* Check if the date is not a duplicate */}
+
+                        {id === 0 ||
+                        time.Date !== doctor.DateObj[id - 1].Date ? (
+                          <>
+                            <h4
+                              style={{
+                                color: "brown",
+                                marginBottom: "5px", // Add margin bottom for spacing
+                              }}
+                            >
+                              {time.Date}
+                            </h4>
+                            <ul
+                              style={{
+                                color: "blue",
+                                gap: "5px",
+                                display: "flex",
+                              }}
+                            >
+                              {time.Times.map((time, timeIndex) => (
+                                <li key={timeIndex}>
+                                  <h4>{time}</h4>
+                                </li>
+                              ))}
+                            </ul>
+                          </>
+                        ) : null}
+                      </div>
+                    ))}
+                    {/* </h4> */}
                   </div>
                 </div>
               </div>
