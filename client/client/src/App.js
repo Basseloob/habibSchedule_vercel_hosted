@@ -36,7 +36,7 @@ function App() {
   return (
     <div
       className="body"
-      style={{ content: "width=device-width, initial-scale=1.0" }}
+      style={{ content: "width=device-width", scale: "1.0" }}
     >
       <Router>
         <header>
