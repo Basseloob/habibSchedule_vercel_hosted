@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -165,14 +166,14 @@ const HabibData = () => {
                         {id === 0 ||
                         time.Date !== doctor.DateObj[id - 1].Date ? (
                           <>
-                            <h4
+                            <h3
                               style={{
                                 color: "brown",
                                 marginBottom: "5px", // Add margin bottom for spacing
                               }}
                             >
                               {time.Date}
-                            </h4>
+                            </h3>
                             <ul
                               style={{
                                 color: "blue",
