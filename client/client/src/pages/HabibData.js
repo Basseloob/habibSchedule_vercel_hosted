@@ -1,3 +1,8 @@
+// First add choose city
+// Second after choosing the city - choose the hospital in that city - as Ryiadh has more than 4 hospitals.
+// Add mySQL or MongoDB connection as every thursday puppeteer function will run and save the data into
+//   the DB and then vercel will read the saved data from the DB mySQL or Mongo.
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 import axios from "axios";

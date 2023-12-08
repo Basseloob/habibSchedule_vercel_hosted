@@ -1,1 +1,0 @@
-1- create the file and add it into github before creating react app.
