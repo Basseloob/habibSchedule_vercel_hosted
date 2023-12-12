@@ -52,6 +52,10 @@ app.use((req, res, next) => {
 
 app.use("/habibUrl", habibRouter);
 
+app.get("/", (req, res) => {
+  res.json("Hello from habibUrl file...");
+});
+
 // Error route handler :
 
 app.all("*", (req, res, next) => {
