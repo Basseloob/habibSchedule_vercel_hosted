@@ -5,7 +5,7 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: ["https://mern-api-vercel-testing-frontend.vercel.app"],
+    origin: [],
     methods: ["POST", "GET"],
     credentials: true,
   })
@@ -14,6 +14,15 @@ app.use(
 app.use(express.json());
 // // const dotenv = require("dotenv"); //  --> Enviroment variable...need to be before ./app file.
 // // dotenv.config({ path: "./config.env" });
+
+// /\//\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/
+// /\//\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/
+// Routes :
+
+app.get("/", (req, res) => {
+  res.json("Hello from habibUrl file...");
+});
+s;
 
 // const app = require("./app");
 
