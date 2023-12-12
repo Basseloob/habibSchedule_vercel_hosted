@@ -98,7 +98,7 @@ app.use(express.json());
 mongoose
   .connect(
     // "mongodb://basseloob:Basilpsp9111@alhabib-database.nnbcxyh.mongodb.net:27017,ac-7hgzxvl-shard-00-01.nnbcxyh.mongodb.net:27017,ac-7hgzxvl-shard-00-02.nnbcxyh.mongodb.net:27017/?replicaSet=atlas-x2jk5t-shard-0&ssl=true&authSource=admin"
-    "mongodb+srv://basseloob:Basilpsp9111@alhabib-cluster.nnbcxyh.mongodb.net/testname?retryWrites=true&w=majority"
+    "mongodb+srv://basseloob:Basilpsp9111@alhabib-cluster.nnbcxyh.mongodb.net/testname2?retryWrites=true&w=majority"
   )
   .then(() => {
     console.log("Connected to MongoDB");
