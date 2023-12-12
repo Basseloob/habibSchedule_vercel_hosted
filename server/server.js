@@ -1,8 +1,21 @@
 const mongoose = require("mongoose");
+const express = require("express");
+const app = express();
+const cors = require("cors");
+
+app.use(
+  cors({
+    origin: ["https://mern-api-vercel-testing-frontend.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
+
+app.use(express.json());
 // // const dotenv = require("dotenv"); //  --> Enviroment variable...need to be before ./app file.
 // // dotenv.config({ path: "./config.env" });
 
-const app = require("./app");
+// const app = require("./app");
 
 process.on("uncaughtException", (err) => {
   console.log("UNHANDELED EXCEPTION! 💥💥💥 Shutting down...");
@@ -12,20 +25,9 @@ process.on("uncaughtException", (err) => {
 
 // /\//\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/
 // /\//\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/
-// Starting the Server & Connecting to the DB:
-
-// MySQL DB :
-
-// db.sequelize.sync().then(() => {
-// const port = 3001;
-// app.listen(port, () => {
-//   console.log(`Server is running on port ${port}`);
-// });
-// });
 
 // MongoDB DB :
 
-// //replacing the PASSWORD with real one.
 // const DB = process.env.DATABASE;
 const DB =
   // "mongodb://basseloob:Basilpsp9111@alhabib-database.nnbcxyh.mongodb.net:27017,ac-7hgzxvl-shard-00-01.nnbcxyh.mongodb.net:27017,ac-7hgzxvl-shard-00-02.nnbcxyh.mongodb.net:27017/?replicaSet=atlas-x2jk5t-shard-0&ssl=true&authSource=admin";
@@ -60,24 +62,25 @@ mongoose
 //   console.log("We are in the PRODUCTION env");
 // }
 
-// Showing the Environment we are on :
-console.log(app.get("env"));
-console.log(
-  "/////////////////////////////////////////////////////////////////////"
-);
+// // Showing the Environment we are on :
+// console.log(app.get("env"));
+// console.log(
+//   "/////////////////////////////////////////////////////////////////////"
+// );
 // console.log(process.env);
 
 // const port = process.env.PORT || 3001;
 const port = 3001;
-const server = app.listen(port, () => {
+// const server = app.listen(port, () => {
+app.listen(port, () => {
   console.log(`App is running on port ${process.env.PORT}...`);
 });
 
-process.on("unhandledRejection", (err) => {
-  console.log(err.name, err.message);
-  // console.log(err); // printing the entire error.
-  console.log("UNHANDELED REJECTION! 💥💥💥 Shutting down...");
-  server.close(() => {
-    process.exit(1); // 0 = success , 1 = uncaught exception.
-  });
-});
+// process.on("unhandledRejection", (err) => {
+//   console.log(err.name, err.message);
+//   // console.log(err); // printing the entire error.
+//   console.log("UNHANDELED REJECTION! 💥💥💥 Shutting down...");
+//   server.close(() => {
+//     process.exit(1); // 0 = success , 1 = uncaught exception.
+//   });
+// });
