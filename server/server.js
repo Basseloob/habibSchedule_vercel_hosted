@@ -86,13 +86,13 @@ const cors = require("cors");
 // const RegisterModel = require("./models/Register");
 
 const app = express();
-app.use(
-  cors({
-    origin: ["https://deploy-mern-frontend.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: ["https://deploy-mern-frontend.vercel.app"],
+//     methods: ["POST", "GET"],
+//     credentials: true,
+//   })
+// );
 app.use(express.json());
 
 mongoose
@@ -103,10 +103,6 @@ mongoose
   .then(() => {
     console.log("Connected to MongoDB");
   });
-
-app.get("/", (req, res) => {
-  res.json("Hello");
-});
 
 // app.post("/register", (req, res) => {
 //   const { name, email, password } = req.body;
@@ -122,6 +118,10 @@ app.get("/", (req, res) => {
 //     })
 //     .catch((err) => res.json(err));
 // });
+
+app.get("/", (req, res) => {
+  res.json("Hello");
+});
 
 app.listen(3001, () => {
   console.log("Server is Running");
