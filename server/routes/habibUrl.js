@@ -122,4 +122,8 @@ router.get("/habibSchedule_Nephrology", async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.json("Hello from habibUrl file...");
+});
+
 module.exports = router;

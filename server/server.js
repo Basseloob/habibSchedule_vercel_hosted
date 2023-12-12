@@ -2,7 +2,7 @@
 // // const dotenv = require("dotenv"); //  --> Enviroment variable...need to be before ./app file.
 // // dotenv.config({ path: "./config.env" });
 
-// const app = require("./app");
+const app = require("./app");
 
 // process.on("uncaughtException", (err) => {
 //   console.log("UNHANDELED EXCEPTION! 💥💥💥 Shutting down...");
@@ -81,7 +81,7 @@
 // });
 
 const express = require("express");
-const app = express();
+// const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
 // const RegisterModel = require("./models/Register");
