@@ -23,7 +23,13 @@ app.use(
 
 app.use(express.json());
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 
 app.use((req, res, next) => {
   console.log("Hello from the MiddleWare !");

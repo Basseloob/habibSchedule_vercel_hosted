@@ -44,7 +44,7 @@ mongoose
   .then((connectionObj) => {
     // console.log(connectionObj.connections[0].name);
     console.log(
-      "DB connections successfully connected to : ",
+      "DB connections successfully connected to Alhabib_Cluster and the name of the collection is : ",
       connectionObj.connections[0].name
     );
   })
@@ -61,7 +61,7 @@ console.log(app.get("env"));
 console.log(
   "/////////////////////////////////////////////////////////////////////"
 );
-console.log(process.env);
+// console.log(process.env);
 
 const port = process.env.PORT || 3001;
 const server = app.listen(port, () => {

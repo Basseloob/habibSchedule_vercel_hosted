@@ -38,7 +38,7 @@ router.get("/habibSchedule_FM", async (req, res) => {
     // 1) Get the Data :
     // await get_Habib_Data(habib_Family_Url);
     // 2) Sanitize the link removing / / :
-    const sanitized_Clinic_Parameter_Link = sanitize(habi);
+    const sanitized_Clinic_Parameter_Link = sanitize(habib_KBR_Family_Url);
     // 3) Get the file Path :
     const filePath = require(`../output/${sanitized_Clinic_Parameter_Link}`);
     // 4) Response :
