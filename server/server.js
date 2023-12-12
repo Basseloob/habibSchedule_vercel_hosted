@@ -81,11 +81,15 @@
 // });
 
 const express = require("express");
+const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
 // const RegisterModel = require("./models/Register");
 
-const app = express();
+// Serve static files from the 'public' directory
+app.use(express.json());
+app.use(express.static("public"));
+
 // app.use(
 //   cors({
 //     origin: ["https://deploy-mern-frontend.vercel.app"],
@@ -93,7 +97,6 @@ const app = express();
 //     credentials: true,
 //   })
 // );
-app.use(express.json());
 
 mongoose
   .connect(
